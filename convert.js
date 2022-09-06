@@ -21,9 +21,9 @@ export function convert() {
         const file_name = get_file_name(para_file);
         const file_type = get_file_type(para_format);
         // console.log(file_name + " + " + file_type);
-
+        console.log("parafile: " + para_file);
         // fetch(para_path)
-        fetch(para_files_list[i])
+        fetch(para_file)
             .then((res) => res.blob())
             .then((blob) =>
                 heic2any({

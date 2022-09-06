@@ -9,15 +9,12 @@
 
 </head>
 <body>
-
-
-
     <h1 style="text-align:center;">
-        HEIC转JPG、JPEG、PNG工具
+        HEIC转JPG、JPEG、PNG工具 by SMY
     </h1>
 
     <p style="font-size:20px;">
-        <label for="file_format">选择转换的图片格式:</label>
+        <label for="file_format">请选择转换的图片格式:</label>
 
         <select name="file_format" id="file_format" style="font-size:20px;">
             <option value="image/jpg">JPG</option>
@@ -29,13 +26,13 @@
         <br>
 
 
-        <label for="rate">输入图像压缩尺寸:</label>
+        <label for="rate">请输入图像压缩比例:</label>
         <input type="number" name="rate" id="rate" min="0" max="1" placeholder="1.0" step="0.01" style="font-size:20px;" value="1">
 
         <br>
         <br>
 
-        <label for="files">选择输入图片</label>
+        <label for="files">请选择转换图片</label>
         <input type="file" name="files" id="files" style="font-size:20px;" multiple="multiple">
 
         <br>
@@ -43,23 +40,13 @@
 
         <button type="button" id="hello">确定</button>
         <script type="module">
-            // import {convert} from './convert.js';
-            import {convert} from './convert2.js';
+            import {convert} from './convert.js';
             document.querySelector('#hello').addEventListener('click', convert);
-            document.getElementById('files').addEventListener('change', function selectedFileChanged() {
-                console.log(this.files); // will contain information about the file that was selected.
-            });
-
         </script>
-
     </p>
 
 
 
 </body>
-
-
-
-
 
 </html>

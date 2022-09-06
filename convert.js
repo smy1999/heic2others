@@ -9,6 +9,7 @@ export function convert() {
     const para_rate = parseFloat(document.getElementById("rate").value);
     const para_format = document.getElementById("file_format").value;
     const para_files_list = document.getElementById("files").files;
+    console.log(para_files_list);
 
     console.log(para_rate);
     console.log(para_format);
@@ -21,7 +22,8 @@ export function convert() {
         const file_type = get_file_type(para_format);
         // console.log(file_name + " + " + file_type);
 
-        fetch(para_path)
+        // fetch(para_path)
+        fetch(para_files_list[i])
             .then((res) => res.blob())
             .then((blob) =>
                 heic2any({

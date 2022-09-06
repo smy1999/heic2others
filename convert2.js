@@ -9,7 +9,6 @@ export function convert() {
     const para_rate = parseFloat(document.getElementById("rate").value);
     const para_format = document.getElementById("file_format").value;
     const para_files_list = document.getElementById("files").files;
-    const para_path = document.getElementById("path").value;
     console.log(para_files_list);
 
     console.log(para_rate);
@@ -23,13 +22,6 @@ export function convert() {
         const file_type = get_file_type(para_format);
         // console.log(file_name + " + " + file_type);
 
-        // fetch(para_path)
-        let file_full_path;
-        if (para_path[para_path.length - 1] != '/')
-           file_full_path = para_path + "/" + para_file
-        else
-            file_full_path = para_path + para_file
-        console.log("parafile: " + file_full_path);
 
         const input_blob = URL.createObjectURL(para_files_list[i]);
         // return url;

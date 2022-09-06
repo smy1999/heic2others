@@ -41,12 +41,14 @@
         <br>
         <br>
 
-<!--        <button style="font-size:20px;" onclick="transfer()">确定</button>-->
         <button type="button" id="hello">确定</button>
         <script type="module">
-            import {convert} from './convert.js';
+            // import {convert} from './convert.js';
+            import {convert} from './convert2.js';
             document.querySelector('#hello').addEventListener('click', convert);
-
+            document.getElementById('files').addEventListener('change', function selectedFileChanged() {
+                console.log(this.files); // will contain information about the file that was selected.
+            });
 
         </script>
 

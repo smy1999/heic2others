@@ -9,6 +9,7 @@ export function convert() {
     const para_rate = parseFloat(document.getElementById("rate").value);
     const para_format = document.getElementById("file_format").value;
     const para_files_list = document.getElementById("files").files;
+    const para_path = document.getElementById("path").value;
     console.log(para_files_list);
 
     console.log(para_rate);
@@ -17,13 +18,26 @@ export function convert() {
 
     for (let i = 0; i < para_files_list.length; i++) {
         const para_file = para_files_list[i].name;
-        const para_path = "./" + para_file;
+        // const para_path = "./" + para_file;
         const file_name = get_file_name(para_file);
         const file_type = get_file_type(para_format);
         // console.log(file_name + " + " + file_type);
-        console.log("parafile: " + para_file);
+
         // fetch(para_path)
-        fetch(para_file)
+        let file_full_path;
+        if (para_path[para_path.length - 1] != '/')
+           file_full_path = para_path + "/" + para_file
+        else
+            file_full_path = para_path + para_file
+        console.log("parafile: " + file_full_path);
+
+
+
+
+
+
+
+        fetch(file_full_path)
             .then((res) => res.blob())
             .then((blob) =>
                 heic2any({
